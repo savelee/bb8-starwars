@@ -1,0 +1,38 @@
+<html>
+<head>
+  <title>BB8 - Connection Test</title>
+  <script src="sphero.min.js"></script>
+  <script>
+
+  "use strict";
+
+  var bb8 = sphero('68da9181e0c444b28a4a8bb854ea219f');
+
+  bb8.connect(function() {
+    // sets color to the provided r/g/b values
+    bb8.color({ red: 255, green: 0, blue: 255 });
+
+    setTimeout(function() {
+      console.log("color 1");
+      // sets color to the provided hex value
+      bb8.color(0xff0000);
+    }, 1000);
+
+    setTimeout(function() {
+      console.log("color 2");
+      // hex numbers can also be passed in strings
+      bb8.color("00ff00");
+    }, 2000);
+
+    setTimeout(function() {
+      console.log("color 3");
+      // sets color to the provided color name
+      bb8.color("magenta");
+    }, 3000);
+  });
+
+  </script>
+</head>
+<body>
+</body>
+</html>
